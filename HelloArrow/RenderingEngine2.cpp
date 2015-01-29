@@ -51,17 +51,22 @@ struct Vertex {
 // Define the positions and colors of two triangles
 // Vericles[XY RGB A]
 const Vertex Vertices[] = {
+    {{-0.6, -0.966}, {0, 0, 1, 0.55}},
+    {{0.6, -0.966},  {0, 0, 1, 0.55}},
+    {{0, 1.1},       {0, 0, 1, 0.55}},
     {{-0.5, -0.866}, {1, 1, 0.5f, 1}},
     {{0.5, -0.866},  {1, 1, 0.5f, 1}},
     {{0, 1},         {1, 1, 0.5f, 1}},
-    {{-0.3, -0.866}, {0, 0, 1, 0.55}},
-    {{0.5, -0.866},  {0, 0, 1, 0.55}},
-    {{0, 1},         {0, 0, 1, 0.55}},
-    {{-0.5, -0.866}, {0.5f, 0.5f, 0.5f, 1}},
-    {{0.5, -0.866},  {0.5f, 0.5f, 0.5f, 1}},
-    {{0, -0.4f},     {0.5f, 0.5f, 0.5f, 1}},
+    {{-0.6, -0.966}, {0, 0, 1, 0.55}},
+    {{0.6, -0.966},  {0, 0, 1, 0.55}},
+    {{0, -0.5f},     {0, 0, 1, 0.55}},
+    {{-0.6, -0.966}, {0.5f, 0.5f, 0.5f, 1}},
+    {{0.6, -0.966},  {0.5f, 0.5f, 0.5f, 1}},
+    {{0, -0.6f},     {0.5f, 0.5f, 0.5f, 1}},
  
 };
+
+
 
 RenderingEngine2::RenderingEngine2()
 {
@@ -116,8 +121,8 @@ void RenderingEngine2::Render() const
     glEnableVertexAttribArray(positionSlot);
     glEnableVertexAttribArray(colorSlot);
     
-    glEnable(GL_BLEND);// Enabling of blending function
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    //glEnable(GL_BLEND);// Enabling of blending function
+    //glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     
     GLsizei stride = sizeof(Vertex);
     const GLvoid *pCoords = &Vertices[0].Position[0];

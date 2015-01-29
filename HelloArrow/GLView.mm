@@ -51,6 +51,8 @@ const bool ForceES1 = false;
             return nil;
         }
         
+        // Allow the application to work on older devices
+        // while leveraging ES 2.0 on newer devices.
         if (api == kEAGLRenderingAPIOpenGLES1) {
             NSLog(@"Using OpenGL ES 1.1");
             m_renderingEngine = CreateRenderer1();
@@ -83,8 +85,8 @@ const bool ForceES1 = false;
 }
 
     /* 
-     didRotate event handler casts the iPhone-specific UIDeviceOrientation portable DeviceOrientation type
-     and then passes it on to the rendering engine.
+     didRotate event handler casts the iPhone-specific UIDeviceOrientation 
+     portable DeviceOrientation type and then passes it on to the rendering engine.
      */
 - (void)didRotate:(NSNotification *)notification
 {

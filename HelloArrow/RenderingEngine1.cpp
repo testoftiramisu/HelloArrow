@@ -71,6 +71,7 @@ void RenderingEngine1::Initialize(int width, int height)
                                  GL_RENDERBUFFER_OES,
                                  m_renderbuffer);
     
+    // Set up the vertex transformation state with glViewport and glOrthof.
     // Setting up a coordinate system
     glViewport(0, 0, width, height);
     

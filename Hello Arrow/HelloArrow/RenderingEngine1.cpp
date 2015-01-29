@@ -40,12 +40,12 @@ struct Vertex {
 // Define the positions and colors of two triangles
 // Vericles[XYRGBA]
 const Vertex Vertices[] = {
-    {{-0.5, -0.866}, {1, 1, 0.5f, 1}},
-    {{0.5, -0.866},  {1, 1, 0.5f, 1}},
-    {{0, 1},         {1, 1, 0.5f, 1}},
-    {{-0.5, -0.866}, {0.5f, 0.5f, 0.5f}},
-    {{0.5, -0.866},  {0.5f, 0.5f, 0.5f}},
-    {{0, -0.4f},     {0.5f, 0.5f, 0.5f}},
+    {{1, 1}, {1, 0, 0, 1}},
+    {{1, 1.5},  {1, 0, 0, 1}},
+    {{1.5, 1.5},  {1, 0, 0, 1}},
+    {{1.5, 1.5}, {0.5f, 0.5f, 0.5f}},
+    {{1.5, 1}, {0.5f, 0.5f, 0.5f}},
+    {{1, 1}, {0.5f, 0.5f, 0.5f}},
  
 };
 
@@ -115,6 +115,30 @@ void RenderingEngine1::Render() const
     // 0 for the starting vertex
     // vertexCount for the number of vertices
     glDrawArrays(GL_TRIANGLES, 0, vertexCount);
+    
+    const int stride = 2 * sizeof(float);
+    
+    // GL_RIANGLE_STRIP for the topology
+    float triangleStrip[][2] = { {0, 1}, {0, 0}, {1, 1}, {1, 0} };
+    glVertexPointer(2, GL_FLOAT, stride, triangleStrip);
+    glDrawArrays(GL_TRIANGLE_STRIP, 0, sizeof(triangleStrip) / stride);
+    
+    // GL_TRIANGLE_FAN for the topology
+    float triangleFan[][2] = { {-1, -1}, {-1, 0}, {0, 0}, {0, -1} };
+    glVertexPointer(2, GL_FLOAT, stride, triangleFan);
+    glDrawArrays(GL_TRIANGLE_FAN, 0, sizeof(triangleFan) / stride);
+    
+    float lines[][2] = { {0, 0}, {0, 1}, {0, 1}, {1, 1}, {1, 1}, {1, 0}, {1, 0}, {0, 0} };
+    glVertexPointer(2, GL_FLOAT, stride, lines);
+    glDrawArrays(GL_LINES, 0, sizeof(lines) / stride);
+    
+    float lineStrip[][2] = { {-1, 0}, {-1, 1}, {0, 1}, {0, 0}, {-1, 0} };
+    glVertexPointer(2, GL_FLOAT, stride, lineStrip);
+    glDrawArrays(GL_LINE_STRIP, 0, sizeof(lineStrip) / stride);
+    
+    float lineLoop[][2] = { {0, 0}, {1, 0}, {1, -1}, {0, -1} };
+    glVertexPointer(2, GL_FLOAT, stride, lineLoop);
+    glDrawArrays(GL_LINE_LOOP, 0, sizeof(lineLoop) / stride);
     
     // Disable the two vertex attributes;
     // they need to be enabled only during the preceding draw command.

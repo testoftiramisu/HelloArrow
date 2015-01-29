@@ -39,6 +39,7 @@ const bool ForceES1 = false;
         m_context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES1];
         
         // Tell the EAGLContext to make itself current
+        // Change to kEAGLRenderingAPIOpenGLES1 for start with ES 1.1
         EAGLRenderingAPI api = kEAGLRenderingAPIOpenGLES2;
         m_context = [[EAGLContext alloc] initWithAPI:api];
         

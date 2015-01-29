@@ -132,6 +132,11 @@ void RenderingEngine2::Render() const
     glVertexAttribPointer(colorSlot, 4, GL_FLOAT, GL_FALSE, stride, pColors);
     
     GLsizei VertexCount = sizeof(Vertices) / sizeof(Vertex);
+    
+    // Execute the draw command with glDrawArrays:
+    // GL_TRIANGLES for the topology
+    // 0 for the starting vertex
+    // vertexCount for the number of vertices
     glDrawArrays(GL_TRIANGLES, 0, VertexCount);
     
     glDisableVertexAttribArray(positionSlot);

@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "GLView.h"
+#import "ViewController.h"
 
 @implementation AppDelegate
 
@@ -22,9 +23,10 @@
     m_window = [[UIWindow alloc] initWithFrame:screenBounds];
     m_view = [[GLView alloc] initWithFrame:screenBounds];
     
-    [m_window addSubview:m_view];
-    [m_window makeKeyAndVisible];
+    ViewController *vc = [[ViewController alloc] init];
     
+    [m_window setRootViewController:vc];
+    [m_window makeKeyAndVisible];
     return YES;
 }
 

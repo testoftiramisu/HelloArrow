@@ -24,6 +24,8 @@
 		04EC30A51966E58800D2312D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04EC30A41966E58800D2312D /* QuartzCore.framework */; };
 		04EC30A81966F74C00D2312D /* GLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 04EC30A71966F74C00D2312D /* GLView.mm */; };
 		04EC30B1196ED08100D2312D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04EC30B0196ED08100D2312D /* Images.xcassets */; };
+		A22D75EB1CEDC2B600090B3C /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A22D75EA1CEDC2B600090B3C /* GLKit.framework */; };
+		A29B129E1CEDBE6B00850C6E /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A29B129D1CEDBE6B00850C6E /* ViewController.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,9 @@
 		04EC30A61966F74C00D2312D /* GLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLView.h; sourceTree = "<group>"; };
 		04EC30A71966F74C00D2312D /* GLView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GLView.mm; sourceTree = "<group>"; };
 		04EC30B0196ED08100D2312D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A22D75EA1CEDC2B600090B3C /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		A29B129C1CEDBE6B00850C6E /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		A29B129D1CEDBE6B00850C6E /* ViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A22D75EB1CEDC2B600090B3C /* GLKit.framework in Frameworks */,
 				04EC30A51966E58800D2312D /* QuartzCore.framework in Frameworks */,
 				04EC30A31966E57800D2312D /* OpenGLES.framework in Frameworks */,
 				04EC30761966DEF100D2312D /* CoreGraphics.framework in Frameworks */,
@@ -121,6 +127,7 @@
 		04EC30721966DEF100D2312D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A22D75EA1CEDC2B600090B3C /* GLKit.framework */,
 				04EC30A41966E58800D2312D /* QuartzCore.framework */,
 				04EC30A21966E57800D2312D /* OpenGLES.framework */,
 				04EC30731966DEF100D2312D /* Foundation.framework */,
@@ -136,6 +143,8 @@
 			children = (
 				04BD902D1976B11400722E47 /* Shaders */,
 				04EC30821966DEF100D2312D /* AppDelegate.h */,
+				A29B129C1CEDBE6B00850C6E /* ViewController.h */,
+				A29B129D1CEDBE6B00850C6E /* ViewController.mm */,
 				04EC30831966DEF100D2312D /* AppDelegate.mm */,
 				048E8417196EE7C2001701DD /* IRenderingEngine.hpp */,
 				04BD902A1974142D00722E47 /* RenderingEngine1.cpp */,
@@ -221,7 +230,7 @@
 		04EC30681966DEF100D2312D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Denys Khlivnyy";
 				TargetAttributes = {
 					04EC308A1966DEF100D2312D = {
@@ -272,6 +281,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A29B129E1CEDBE6B00850C6E /* ViewController.mm in Sources */,
 				04EC30841966DEF100D2312D /* AppDelegate.mm in Sources */,
 				04EC30801966DEF100D2312D /* main.m in Sources */,
 				04BD902C1974142D00722E47 /* RenderingEngine1.cpp in Sources */,
@@ -336,6 +346,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -396,7 +407,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HelloArrow/HelloArrow-Prefix.pch";
 				INFOPLIST_FILE = "HelloArrow/HelloArrow-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				PRODUCT_BUNDLE_IDENTIFIER = "DK.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -409,7 +423,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HelloArrow/HelloArrow-Prefix.pch";
 				INFOPLIST_FILE = "HelloArrow/HelloArrow-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				PRODUCT_BUNDLE_IDENTIFIER = "DK.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -430,6 +447,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "HelloArrowTests/HelloArrowTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "DK.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -448,6 +466,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HelloArrow/HelloArrow-Prefix.pch";
 				INFOPLIST_FILE = "HelloArrowTests/HelloArrowTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "DK.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
